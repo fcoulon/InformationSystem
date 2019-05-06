@@ -94,22 +94,21 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public DataBase createDataBase() {
 		DataBaseImpl dataBase = new DataBaseImpl();
-		dataBase.setTechID(EcoreUtil.generateUUID());
 		return dataBase;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Column is a specific implementation in to order to make dynamic change on the model when its properties change.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public Column createColumn() {
 		ColumnImpl column = new ColumnSpec();
-		column.setTechID(EcoreUtil.generateUUID());
 		TypeInstance type = TypesLibraryFactory.eINSTANCE.createTypeInstance();
 		column.setType(type);
 		return column;
@@ -118,110 +117,101 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Index createIndex() {
 		IndexImpl index = new IndexImpl();
-		index.setTechID(EcoreUtil.generateUUID());
 		return index;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * View is a specific implementation in order to analyse the SQL request.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public View createView() {
 		ViewSpec view = new ViewSpec();
-		view.setTechID(EcoreUtil.generateUUID());
 		return view;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Table createTable() {
 		TableImpl table = new TableImpl();
-		table.setTechID(EcoreUtil.generateUUID());
 		return table;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public PrimaryKey createPrimaryKey() {
 		PrimaryKeyImpl primaryKey = new PrimaryKeyImpl();
-		primaryKey.setTechID(EcoreUtil.generateUUID());
 		return primaryKey;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public ForeignKey createForeignKey() {
 		ForeignKeyImpl foreignKey = new ForeignKeyImpl();
-		foreignKey.setTechID(EcoreUtil.generateUUID());
 		return foreignKey;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public ForeignKeyElement createForeignKeyElement() {
 		ForeignKeyElementImpl foreignKeyElement = new ForeignKeyElementImpl();
-		foreignKeyElement.setTechID(EcoreUtil.generateUUID());
 		return foreignKeyElement;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public IndexElement createIndexElement() {
 		IndexElementImpl indexElement = new IndexElementImpl();
-		indexElement.setTechID(EcoreUtil.generateUUID());
 		return indexElement;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Constraint createConstraint() {
 		ConstraintImpl constraint = new ConstraintImpl();
-		constraint.setTechID(EcoreUtil.generateUUID());
 		return constraint;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Schema createSchema() {
 		SchemaImpl schema = new SchemaImpl();
-		schema.setTechID(EcoreUtil.generateUUID());
 		return schema;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Sequence createSequence() {
 		SequenceImpl sequence = new SequenceImpl();
-		sequence.setTechID(EcoreUtil.generateUUID());
 		return sequence;
 	}
 

@@ -11,6 +11,7 @@
 package org.obeonetwork.dsl.database;
 
 import org.eclipse.emf.cdo.CDOObject;
+import org.obeonetwork.dsl.environment.ObeoDSMObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,15 +24,13 @@ import org.eclipse.emf.cdo.CDOObject;
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.database.DatabaseElement#getID <em>ID</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.database.DatabaseElement#getComments <em>Comments</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.database.DatabaseElement#getTechID <em>Tech ID</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.dsl.database.DatabasePackage#getDatabaseElement()
  * @model abstract="true"
- * @extends CDOObject
  * @generated
  */
-public interface DatabaseElement extends CDOObject {
+public interface DatabaseElement extends ObeoDSMObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,7 +48,7 @@ public interface DatabaseElement extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see org.obeonetwork.dsl.database.DatabasePackage#getDatabaseElement_ID()
-	 * @model id="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	String getID();
@@ -79,31 +78,5 @@ public interface DatabaseElement extends CDOObject {
 	 * @generated
 	 */
 	void setComments(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Tech ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tech ID</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tech ID</em>' attribute.
-	 * @see #setTechID(String)
-	 * @see org.obeonetwork.dsl.database.DatabasePackage#getDatabaseElement_TechID()
-	 * @model
-	 * @generated
-	 */
-	String getTechID();
-
-	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.database.DatabaseElement#getTechID <em>Tech ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tech ID</em>' attribute.
-	 * @see #getTechID()
-	 * @generated
-	 */
-	void setTechID(String value);
 
 } // DatabaseElement
