@@ -40,8 +40,9 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Database Diagram" titleExpression="[name +' Database'/]" domainClass="database.DataBase">
-      <metamodel href="platform:/plugin/org.obeonetwork.dsl.database/model/database.ecore#/"/>
-      <metamodel href="platform:/plugin/org.obeonetwork.dsl.typeslibrary/model/typeslibrary.ecore#/"/>
+      <metamodel href="../../org.obeonetwork.dsl.database/model/database.ecore#/"/>
+      <metamodel href="../../org.obeonetwork.dsl.technicalid/model/technicalid.ecore#/"/>
+      <metamodel href="../../org.obeonetwork.dsl.typeslibrary/model/typeslibrary.ecore#/"/>
       <defaultLayer name="Default">
         <edgeMappings name="DB_ForeignKey" labelDirectEdit="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@toolSections.0/@ownedTools[name='EDT_DatabaseElement']" semanticCandidatesExpression="service:getForeignKeys(diagram)" semanticElements="var:self" sourceMapping="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@containerMappings[name='DB_Table'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@additionalLayers[name='External%20Tables']/@containerMappings[name='DB_Referenced_External_Table'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@additionalLayers[name='External%20Tables']/@containerMappings[name='DB_Non_Referenced_External_Table']" targetMapping="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@containerMappings[name='DB_Table'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@additionalLayers[name='External%20Tables']/@containerMappings[name='DB_Referenced_External_Table'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@additionalLayers[name='External%20Tables']/@containerMappings[name='DB_Non_Referenced_External_Table']" targetFinderExpression="[getTargetTable()/]" sourceFinderExpression="[getSourceTable()/]" domainClass="database.ForeignKey" useDomainElement="true">
           <style>
@@ -315,10 +316,13 @@
           <vsmElementCustomizations xsi:type="description:VSMElementCustomizationReuse" reuse="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@customization/@vsmElementCustomizations.0/@featureCustomizations.0" appliedOn="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@additionalLayers[name='Index']/@containerMappings[name='DB_TableWithIndex']/@subNodeMappings[name='DB_Column']/@style"/>
         </customization>
       </additionalLayers>
+      <metamodels href="../../org.obeonetwork.dsl.database/model/database.ecore#/"/>
+      <metamodels href="../../org.obeonetwork.dsl.typeslibrary/model/typeslibrary.ecore#/"/>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Schema Diagram" titleExpression="[name + ' Schema'/]" domainClass="database.Schema">
-      <metamodel href="platform:/plugin/org.obeonetwork.dsl.database/model/database.ecore#/"/>
-      <metamodel href="platform:/plugin/org.obeonetwork.dsl.typeslibrary/model/typeslibrary.ecore#/"/>
+      <metamodel href="../../org.obeonetwork.dsl.database/model/database.ecore#/"/>
+      <metamodel href="../../org.obeonetwork.dsl.technicalid/model/technicalid.ecore#/"/>
+      <metamodel href="../../org.obeonetwork.dsl.typeslibrary/model/typeslibrary.ecore#/"/>
       <defaultLayer name="Default" reusedMappings="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@containerMappings[name='DB_Table'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@edgeMappings[name='DB_ForeignKey'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@containerMappings[name='DB_View'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@containerMappings[name='DB_Sequence']">
         <toolSections name="Schemas" reusedTools="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CRE_Table'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CRE_View'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CRE_Column'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CRE_PKColumn'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CRE_PrimaryKey'] //@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CRE_ForeignKey']"/>
         <toolSections name="Sequences" reusedTools="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@toolSections.0/@ownedTools[name='CRE_Sequence']"/>
@@ -341,6 +345,8 @@
           <vsmElementCustomizations xsi:type="description:VSMElementCustomizationReuse" reuse="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Reused%20Description']/@defaultLayer/@customization/@vsmElementCustomizations.0/@featureCustomizations.0" appliedOn="//@ownedViewpoints[name='Database']/@ownedRepresentations[name='Database%20Diagram']/@additionalLayers[name='Index']/@containerMappings[name='DB_TableWithIndex']/@subNodeMappings[name='DB_Column']/@style"/>
         </customization>
       </additionalLayers>
+      <metamodels href="../../org.obeonetwork.dsl.database/model/database.ecore#/"/>
+      <metamodels href="../../org.obeonetwork.dsl.typeslibrary/model/typeslibrary.ecore#/"/>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.database.design.services.EcoreServices"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.database.design.services.DatabaseServices"/>
@@ -349,8 +355,9 @@
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.database.design.services.DatabaseEEFPropertiesServices"/>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
-    <metamodels href="http://www.obeonetwork.org/dsl/database/1.0#/"/>
-    <metamodels href="http://www.obeonetwork.org/dsl/typeslibrary/1.0#/"/>
+    <metamodels href="../../org.obeonetwork.dsl.database/model/database.ecore#/"/>
+    <metamodels href="../../org.obeonetwork.dsl.typeslibrary/model/typeslibrary.ecore#/"/>
+    <metamodels href="../../org.obeonetwork.dsl.technicalid/model/technicalid.ecore#/"/>
     <categories name="Default Category">
       <pages name="Sequence Page" labelExpression="Sequence" domainClass="database::Sequence" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
       <pages name="Constraint Page" labelExpression="Constraint" domainClass="database::Constraint" semanticCandidateExpression="var:self" preconditionExpression="aql:false" groups="//@extensions.0/@categories.0/@groups.1"/>
