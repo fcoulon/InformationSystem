@@ -26,7 +26,6 @@ import org.obeonetwork.dsl.environment.impl.ObeoDSMObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.obeonetwork.dsl.database.impl.DatabaseElementImpl#getID <em>ID</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.database.impl.DatabaseElementImpl#getComments <em>Comments</em>}</li>
  * </ul>
  *
@@ -40,15 +39,6 @@ public abstract class DatabaseElementImpl extends ObeoDSMObjectImpl implements D
 	 */
 	public static final String copyright = "Copyright (c) 2011, 2017 Obeo.\r\nAll rights reserved. This program and the accompanying materials\r\nare made available under the terms of the Eclipse Public License v1.0\r\nwhich accompanies this distribution, and is available at\r\nhttp://www.eclipse.org/legal/epl-v10.html\r\n\r\nContributors:\r\n    Obeo - initial API and implementation";
 
-	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getID()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
 	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -80,9 +70,13 @@ public abstract class DatabaseElementImpl extends ObeoDSMObjectImpl implements D
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Un ID qui dépend de la position de l'élément,
+	 * Conservé pour compatibilité, notamment M2DOC, mais deprécié.
 	 * <!-- end-user-doc -->
+	 * @deprecated
 	 * @generated NOT
 	 */
+	@Deprecated
 	public String getID() {
 		((BasicEObjectImpl) eContainer()).eURIFragmentSegment(eContainingFeature(), this);
 		String id = null;
@@ -121,14 +115,25 @@ public abstract class DatabaseElementImpl extends ObeoDSMObjectImpl implements D
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Conservé pour compatibilité. Alias vers {@link #getTechnicalid()}.
+	 * Déprécié.
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated NOT
+	 */
+	@Deprecated	
+	public String getTechID() {
+		return this.getTechnicalid();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DatabasePackage.DATABASE_ELEMENT__ID:
-				return getID();
 			case DatabasePackage.DATABASE_ELEMENT__COMMENTS:
 				return getComments();
 		}
@@ -173,8 +178,6 @@ public abstract class DatabaseElementImpl extends ObeoDSMObjectImpl implements D
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DatabasePackage.DATABASE_ELEMENT__ID:
-				return ID_EDEFAULT == null ? getID() != null : !ID_EDEFAULT.equals(getID());
 			case DatabasePackage.DATABASE_ELEMENT__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? getComments() != null : !COMMENTS_EDEFAULT.equals(getComments());
 		}

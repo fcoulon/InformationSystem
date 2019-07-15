@@ -84,8 +84,9 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference database.ecore#//Constraint/owner"/>
     </genClasses>
     <genClasses image="false" ecoreClass="database.ecore#//DatabaseElement">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//DatabaseElement/ID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//DatabaseElement/comments"/>
+      <genOperations ecoreOperation="database.ecore#//DatabaseElement/getTechID"/>
+      <genOperations ecoreOperation="database.ecore#//DatabaseElement/getID"/>
     </genClasses>
     <genClasses ecoreClass="database.ecore#//Schema"/>
     <genClasses ecoreClass="database.ecore#//Sequence">

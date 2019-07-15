@@ -22,7 +22,6 @@ import org.obeonetwork.dsl.environment.ObeoDSMObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.obeonetwork.dsl.database.DatabaseElement#getID <em>ID</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.database.DatabaseElement#getComments <em>Comments</em>}</li>
  * </ul>
  *
@@ -39,16 +38,13 @@ public interface DatabaseElement extends ObeoDSMObject {
 	String copyright = "Copyright (c) 2011, 2017 Obeo.\r\nAll rights reserved. This program and the accompanying materials\r\nare made available under the terms of the Eclipse Public License v1.0\r\nwhich accompanies this distribution, and is available at\r\nhttp://www.eclipse.org/legal/epl-v10.html\r\n\r\nContributors:\r\n    Obeo - initial API and implementation";
 
 	/**
-	 * Returns the value of the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>ID</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>ID</em>' attribute.
-	 * @see org.obeonetwork.dsl.database.DatabasePackage#getDatabaseElement_ID()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model kind="operation"
 	 * @generated
 	 */
 	String getID();
@@ -78,5 +74,13 @@ public interface DatabaseElement extends ObeoDSMObject {
 	 * @generated
 	 */
 	void setComments(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getTechID();
 
 } // DatabaseElement

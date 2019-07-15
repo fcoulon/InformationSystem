@@ -20,5 +20,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.emf.cdo;visibility:=reexport,
  org.obeonetwork.dsl.environment;bundle-version="11.0.0";visibility:=reexport,
- org.obeonetwork.dsl.environment.common;bundle-version="11.0.0"
+ org.obeonetwork.dsl.environment.common;bundle-version="11.0.0",
+ org.obeonetwork.tools.migration;bundle-version="11.0.0"
 Bundle-ActivationPolicy: lazy

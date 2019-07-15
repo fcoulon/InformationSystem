@@ -10,14 +10,31 @@
  *******************************************************************************/
 package org.obeonetwork.dsl.database.util;
 
+import java.io.IOException;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.obeonetwork.tools.migration.XMIResourceWithMigrationSupportImpl;
 
-public class DatabaseResourceImpl extends XMIResourceImpl {
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Resource </b> associated with the package.
+ * <!-- end-user-doc -->
+ * @see org.obeonetwork.dsl.database.util.DatabaseResourceFactoryImpl
+ * @generated NOT
+ */
+public class DatabaseResourceImpl extends XMIResourceWithMigrationSupportImpl {
 
 	public DatabaseResourceImpl(URI uri) {
 		super(uri);
 	}
+	
+	@Override
+	public void save(Map<?, ?> options) throws IOException {
+		getEObjectToExtensionMap().clear();
+		super.save(options);
+	}	
 
 	@Override
 	protected boolean useUUIDs() {
