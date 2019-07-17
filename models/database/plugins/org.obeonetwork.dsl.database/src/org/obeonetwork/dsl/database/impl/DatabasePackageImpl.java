@@ -755,8 +755,17 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDatabaseElement_Comments() {
+	public EAttribute getDatabaseElement_ID() {
 		return (EAttribute)databaseElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDatabaseElement_Comments() {
+		return (EAttribute)databaseElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -991,6 +1000,7 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		createEReference(constraintEClass, CONSTRAINT__OWNER);
 
 		databaseElementEClass = createEClass(DATABASE_ELEMENT);
+		createEAttribute(databaseElementEClass, DATABASE_ELEMENT__ID);
 		createEAttribute(databaseElementEClass, DATABASE_ELEMENT__COMMENTS);
 
 		schemaEClass = createEClass(SCHEMA);
@@ -1145,11 +1155,8 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		initEReference(getConstraint_Owner(), this.getTable(), this.getTable_Constraints(), "owner", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(databaseElementEClass, DatabaseElement.class, "DatabaseElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDatabaseElement_ID(), ecorePackage.getEString(), "ID", null, 0, 1, DatabaseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDatabaseElement_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, DatabaseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(databaseElementEClass, ecorePackage.getEString(), "getTechID", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(databaseElementEClass, ecorePackage.getEString(), "getID", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

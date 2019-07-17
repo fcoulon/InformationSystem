@@ -74,9 +74,32 @@ public class DatabaseElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIDPropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DatabaseElement_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DatabaseElement_ID_feature", "_UI_DatabaseElement_type"),
+				 DatabasePackage.Literals.DATABASE_ELEMENT__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -119,7 +142,7 @@ public class DatabaseElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DatabaseElement)object).getTechnicalid();
+		String label = ((DatabaseElement)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DatabaseElement_type") :
 			getString("_UI_DatabaseElement_type") + " " + label;
@@ -137,6 +160,7 @@ public class DatabaseElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DatabaseElement.class)) {
+			case DatabasePackage.DATABASE_ELEMENT__ID:
 			case DatabasePackage.DATABASE_ELEMENT__COMMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

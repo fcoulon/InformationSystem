@@ -94,8 +94,6 @@ public class IdUtils {
 	private String getId(EObject object) {
 		if (object instanceof Identifiable) {
 			return ((Identifiable) object).getTechnicalid();
-		} else if (object instanceof DatabaseElement) {
-			return ((DatabaseElement) object).getTechID();
 		} else {
 			return EcoreUtil.getID(object);
 		}

@@ -163,13 +163,22 @@ public interface DatabasePackage extends EPackage {
 	int DATABASE_ELEMENT__MODIFIED_ON = EnvironmentPackage.OBEO_DSM_OBJECT__MODIFIED_ON;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATABASE_ELEMENT__ID = EnvironmentPackage.OBEO_DSM_OBJECT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_ELEMENT__COMMENTS = EnvironmentPackage.OBEO_DSM_OBJECT_FEATURE_COUNT + 0;
+	int DATABASE_ELEMENT__COMMENTS = EnvironmentPackage.OBEO_DSM_OBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -178,7 +187,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_ELEMENT_FEATURE_COUNT = EnvironmentPackage.OBEO_DSM_OBJECT_FEATURE_COUNT + 1;
+	int DATABASE_ELEMENT_FEATURE_COUNT = EnvironmentPackage.OBEO_DSM_OBJECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.database.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -270,6 +279,15 @@ public interface DatabasePackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMED_ELEMENT__MODIFIED_ON = DATABASE_ELEMENT__MODIFIED_ON;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__ID = DATABASE_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -388,6 +406,15 @@ public interface DatabasePackage extends EPackage {
 	 * @ordered
 	 */
 	int TABLE_CONTAINER__MODIFIED_ON = NAMED_ELEMENT__MODIFIED_ON;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_CONTAINER__ID = NAMED_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -524,6 +551,15 @@ public interface DatabasePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_BASE__MODIFIED_ON = TABLE_CONTAINER__MODIFIED_ON;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_BASE__ID = TABLE_CONTAINER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -698,6 +734,15 @@ public interface DatabasePackage extends EPackage {
 	int ABSTRACT_TABLE__MODIFIED_ON = NAMED_ELEMENT__MODIFIED_ON;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TABLE__ID = NAMED_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -823,6 +868,15 @@ public interface DatabasePackage extends EPackage {
 	 * @ordered
 	 */
 	int COLUMN__MODIFIED_ON = NAMED_ELEMENT__MODIFIED_ON;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__ID = NAMED_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1069,6 +1123,15 @@ public interface DatabasePackage extends EPackage {
 	int INDEX__MODIFIED_ON = NAMED_ELEMENT__MODIFIED_ON;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__ID = NAMED_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1241,6 +1304,15 @@ public interface DatabasePackage extends EPackage {
 	int VIEW__MODIFIED_ON = ABSTRACT_TABLE__MODIFIED_ON;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__ID = ABSTRACT_TABLE__ID;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1393,6 +1465,15 @@ public interface DatabasePackage extends EPackage {
 	 * @ordered
 	 */
 	int TABLE__MODIFIED_ON = ABSTRACT_TABLE__MODIFIED_ON;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE__ID = ABSTRACT_TABLE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1567,6 +1648,15 @@ public interface DatabasePackage extends EPackage {
 	int PRIMARY_KEY__MODIFIED_ON = NAMED_ELEMENT__MODIFIED_ON;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMARY_KEY__ID = NAMED_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1701,6 +1791,15 @@ public interface DatabasePackage extends EPackage {
 	 * @ordered
 	 */
 	int FOREIGN_KEY__MODIFIED_ON = NAMED_ELEMENT__MODIFIED_ON;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOREIGN_KEY__ID = NAMED_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1848,6 +1947,15 @@ public interface DatabasePackage extends EPackage {
 	int FOREIGN_KEY_ELEMENT__MODIFIED_ON = DATABASE_ELEMENT__MODIFIED_ON;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOREIGN_KEY_ELEMENT__ID = DATABASE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1975,6 +2083,15 @@ public interface DatabasePackage extends EPackage {
 	int INDEX_ELEMENT__MODIFIED_ON = DATABASE_ELEMENT__MODIFIED_ON;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_ELEMENT__ID = DATABASE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2100,6 +2217,15 @@ public interface DatabasePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTRAINT__MODIFIED_ON = NAMED_ELEMENT__MODIFIED_ON;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__ID = NAMED_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -2238,6 +2364,15 @@ public interface DatabasePackage extends EPackage {
 	int SCHEMA__MODIFIED_ON = TABLE_CONTAINER__MODIFIED_ON;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA__ID = TABLE_CONTAINER__ID;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2372,6 +2507,15 @@ public interface DatabasePackage extends EPackage {
 	 * @ordered
 	 */
 	int SEQUENCE__MODIFIED_ON = NAMED_ELEMENT__MODIFIED_ON;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENCE__ID = NAMED_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -3117,6 +3261,17 @@ public interface DatabasePackage extends EPackage {
 	EClass getDatabaseElement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.database.DatabaseElement#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see org.obeonetwork.dsl.database.DatabaseElement#getID()
+	 * @see #getDatabaseElement()
+	 * @generated
+	 */
+	EAttribute getDatabaseElement_ID();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.database.DatabaseElement#getComments <em>Comments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3791,6 +3946,14 @@ public interface DatabasePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATABASE_ELEMENT = eINSTANCE.getDatabaseElement();
+
+		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATABASE_ELEMENT__ID = eINSTANCE.getDatabaseElement_ID();
 
 		/**
 		 * The meta object literal for the '<em><b>Comments</b></em>' attribute feature.
