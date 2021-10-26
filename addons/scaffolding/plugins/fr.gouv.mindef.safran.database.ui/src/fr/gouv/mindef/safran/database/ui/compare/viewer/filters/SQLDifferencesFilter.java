@@ -82,7 +82,9 @@ public class SQLDifferencesFilter extends AbstractDifferenceFilter {
 	public boolean isEnabled(IComparisonScope scope, Comparison comparison) {
 		if (scope != null) {
 			for (String nsURI : scope.getNsURIs()) {
-				if (nsURI.matches("http://www.obeonetwork.org/dsl/database/1.0")) { //$NON-NLS-1$
+				// "http://www.obeonetwork.org/dsl/database/1.0"
+				// "http://www.obeonetwork.org/dsl/database/2.0"
+				if (nsURI.startsWith("http://www.obeonetwork.org/dsl/database/")) { //$NON-NLS-1$
 					return true;
 				}
 			}
