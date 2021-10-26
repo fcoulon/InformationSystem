@@ -37,13 +37,13 @@ public class SQLService {
 		Table table = constraint.getOwner();
 		if (table == null || table.getName() == null) {
 			return StatusUtils.createErrorStatus(
-					MessageFormat.format("Constraint with no table (technical ID {0})", constraint.getTechID()));
+					MessageFormat.format("Constraint with no table (technical ID {0})", constraint.getTechnicalid()));
 		} else if (constraint.getName() == null) {
 			return StatusUtils.createErrorStatus(
-					MessageFormat.format("Constraint with no name (technical ID {0})", constraint.getTechID()));
+					MessageFormat.format("Constraint with no name (technical ID {0})", constraint.getTechnicalid()));
 		} else if (constraint.getExpression() == null) {
 			return StatusUtils.createErrorStatus(
-					MessageFormat.format("Constraint with no exrepssion (technical ID {0})", constraint.getTechID()));
+					MessageFormat.format("Constraint with no exrepssion (technical ID {0})", constraint.getTechnicalid()));
 		}
 
 		return Status.OK_STATUS;
