@@ -104,10 +104,10 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Column createColumn() {
-		ColumnImpl column = new ColumnImpl();
+		ColumnImpl column = new ColumnSpec();
 		return column;
 	}
 
@@ -124,10 +124,10 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public View createView() {
-		ViewImpl view = new ViewImpl();
+		ViewImpl view = new ViewSpec();
 		return view;
 	}
 
