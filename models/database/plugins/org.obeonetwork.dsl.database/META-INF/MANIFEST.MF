@@ -1,10 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Database Model
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.obeonetwork.dsl.database;singleton:=true
+Automatic-Module-Name: org.obeonetwork.dsl.database
 Bundle-Version: 2.2.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Obeo Network
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.obeonetwork.dsl.database,
  org.obeonetwork.dsl.database.impl,
@@ -16,5 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.obeonetwork.dsl.typeslibrary;visibility:=reexport,
  org.obeonetwork.dsl.technicalid;visibility:=reexport,
  org.eclipse.emf.ecore.xmi,
- org.eclipse.emf.cdo;visibility:=reexport
+ org.eclipse.emf.cdo;visibility:=reexport,
+ org.obeonetwork.dsl.environment;visibility:=reexport,
+ org.obeonetwork.tools.migration
 Bundle-ActivationPolicy: lazy

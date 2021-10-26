@@ -34,6 +34,7 @@ import org.obeonetwork.dsl.database.Table;
 import org.obeonetwork.dsl.database.TableContainer;
 import org.obeonetwork.dsl.database.View;
 import org.obeonetwork.dsl.database.ViewElement;
+import org.obeonetwork.dsl.environment.EnvironmentPackage;
 import org.obeonetwork.dsl.technicalid.TechnicalIDPackage;
 import org.obeonetwork.dsl.typeslibrary.TypesLibraryPackage;
 
@@ -198,7 +199,7 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DatabasePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -212,13 +213,15 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		if (isInited) return (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 
 		// Obtain or create and register package
-		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DatabasePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DatabasePackageImpl());
+		Object registeredDatabasePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DatabasePackageImpl theDatabasePackage = registeredDatabasePackage instanceof DatabasePackageImpl ? (DatabasePackageImpl)registeredDatabasePackage : new DatabasePackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
-		TypesLibraryPackage.eINSTANCE.eClass();
+		EnvironmentPackage.eINSTANCE.eClass();
 		TechnicalIDPackage.eINSTANCE.eClass();
+		TypesLibraryPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDatabasePackage.createPackageContents();
@@ -229,7 +232,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		// Mark meta-data to indicate it can't be changed
 		theDatabasePackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DatabasePackage.eNS_URI, theDatabasePackage);
 		return theDatabasePackage;
@@ -771,15 +773,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDatabaseElement_TechID() {
-		return (EAttribute)databaseElementEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSchema() {
 		return schemaEClass;
 	}
@@ -1009,7 +1002,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		databaseElementEClass = createEClass(DATABASE_ELEMENT);
 		createEAttribute(databaseElementEClass, DATABASE_ELEMENT__ID);
 		createEAttribute(databaseElementEClass, DATABASE_ELEMENT__COMMENTS);
-		createEAttribute(databaseElementEClass, DATABASE_ELEMENT__TECH_ID);
 
 		schemaEClass = createEClass(SCHEMA);
 
@@ -1056,6 +1048,7 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 
 		// Obtain other dependent packages
 		TypesLibraryPackage theTypesLibraryPackage = (TypesLibraryPackage)EPackage.Registry.INSTANCE.getEPackage(TypesLibraryPackage.eNS_URI);
+		EnvironmentPackage theEnvironmentPackage = (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1075,6 +1068,7 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		foreignKeyElementEClass.getESuperTypes().add(this.getDatabaseElement());
 		indexElementEClass.getESuperTypes().add(this.getDatabaseElement());
 		constraintEClass.getESuperTypes().add(this.getNamedElement());
+		databaseElementEClass.getESuperTypes().add(theEnvironmentPackage.getObeoDSMObject());
 		schemaEClass.getESuperTypes().add(this.getTableContainer());
 		sequenceEClass.getESuperTypes().add(this.getNamedElement());
 		tableContainerEClass.getESuperTypes().add(this.getNamedElement());
@@ -1161,9 +1155,8 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		initEReference(getConstraint_Owner(), this.getTable(), this.getTable_Constraints(), "owner", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(databaseElementEClass, DatabaseElement.class, "DatabaseElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDatabaseElement_ID(), ecorePackage.getEString(), "ID", null, 0, 1, DatabaseElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatabaseElement_ID(), ecorePackage.getEString(), "ID", null, 0, 1, DatabaseElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDatabaseElement_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, DatabaseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatabaseElement_TechID(), ecorePackage.getEString(), "techID", null, 0, 1, DatabaseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1475,12 +1468,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		   source,
 		   new String[] {
 			   "documentation", "The comment."
-		   });
-		addAnnotation
-		  (getDatabaseElement_TechID(),
-		   source,
-		   new String[] {
-			   "documentation", "The technical identifier."
 		   });
 		addAnnotation
 		  (getSequence_Start(),

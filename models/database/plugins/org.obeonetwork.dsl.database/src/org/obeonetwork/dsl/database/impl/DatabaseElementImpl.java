@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.BasicEObjectImpl;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.obeonetwork.dsl.database.DatabaseElement;
 import org.obeonetwork.dsl.database.DatabasePackage;
+import org.obeonetwork.dsl.environment.impl.ObeoDSMObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,12 +28,11 @@ import org.obeonetwork.dsl.database.DatabasePackage;
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.database.impl.DatabaseElementImpl#getID <em>ID</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.database.impl.DatabaseElementImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.database.impl.DatabaseElementImpl#getTechID <em>Tech ID</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class DatabaseElementImpl extends CDOObjectImpl implements DatabaseElement {
+public abstract class DatabaseElementImpl extends ObeoDSMObjectImpl implements DatabaseElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -60,16 +60,6 @@ public abstract class DatabaseElementImpl extends CDOObjectImpl implements Datab
 	protected static final String COMMENTS_EDEFAULT = null;
 
 	/**
-	 * The default value of the '{@link #getTechID() <em>Tech ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTechID()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TECH_ID_EDEFAULT = null;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -86,16 +76,6 @@ public abstract class DatabaseElementImpl extends CDOObjectImpl implements Datab
 	@Override
 	protected EClass eStaticClass() {
 		return DatabasePackage.Literals.DATABASE_ELEMENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
 	}
 
 	/**
@@ -144,24 +124,6 @@ public abstract class DatabaseElementImpl extends CDOObjectImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTechID() {
-		return (String)eDynamicGet(DatabasePackage.DATABASE_ELEMENT__TECH_ID, DatabasePackage.Literals.DATABASE_ELEMENT__TECH_ID, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTechID(String newTechID) {
-		eDynamicSet(DatabasePackage.DATABASE_ELEMENT__TECH_ID, DatabasePackage.Literals.DATABASE_ELEMENT__TECH_ID, newTechID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -169,8 +131,6 @@ public abstract class DatabaseElementImpl extends CDOObjectImpl implements Datab
 				return getID();
 			case DatabasePackage.DATABASE_ELEMENT__COMMENTS:
 				return getComments();
-			case DatabasePackage.DATABASE_ELEMENT__TECH_ID:
-				return getTechID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,9 +146,6 @@ public abstract class DatabaseElementImpl extends CDOObjectImpl implements Datab
 			case DatabasePackage.DATABASE_ELEMENT__COMMENTS:
 				setComments((String)newValue);
 				return;
-			case DatabasePackage.DATABASE_ELEMENT__TECH_ID:
-				setTechID((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -203,9 +160,6 @@ public abstract class DatabaseElementImpl extends CDOObjectImpl implements Datab
 		switch (featureID) {
 			case DatabasePackage.DATABASE_ELEMENT__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
-				return;
-			case DatabasePackage.DATABASE_ELEMENT__TECH_ID:
-				setTechID(TECH_ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -223,8 +177,6 @@ public abstract class DatabaseElementImpl extends CDOObjectImpl implements Datab
 				return ID_EDEFAULT == null ? getID() != null : !ID_EDEFAULT.equals(getID());
 			case DatabasePackage.DATABASE_ELEMENT__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? getComments() != null : !COMMENTS_EDEFAULT.equals(getComments());
-			case DatabasePackage.DATABASE_ELEMENT__TECH_ID:
-				return TECH_ID_EDEFAULT == null ? getTechID() != null : !TECH_ID_EDEFAULT.equals(getTechID());
 		}
 		return super.eIsSet(featureID);
 	}

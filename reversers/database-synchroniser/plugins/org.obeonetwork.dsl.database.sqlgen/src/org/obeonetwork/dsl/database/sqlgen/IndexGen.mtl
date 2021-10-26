@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module IndexGen(
  'http://www.obeonetwork.org/dsl/database/evolution/1.0',
- 'http://www.obeonetwork.org/dsl/database/1.0',
+ 'http://www.obeonetwork.org/dsl/database/2.0',
  'http://www.eclipse.org/emf/compare',
  'http://www.obeonetwork.org/dsl/typeslibrary/1.0')/]
 
@@ -10,6 +10,7 @@
 
 [query private shouldGenerateIndex(index : Index) : Boolean =
 (index.owner.primaryKey.oclIsUndefined() or index.ID<>index.owner.primaryKey.ID)
+and not index.isIndexForFK()
 and (not index.isTargetOracle() or not index.isIndexOnPKColumns())
 /]
 
@@ -96,10 +97,6 @@ and not (index.getTable().isTargetMySqlOrMariaDB()
 [if (index.elements->forAll(not column.oclIsUndefined()))]
 CREATE [if (index.unique)]UNIQUE [/if]INDEX [index.name/] ON [index.getTable().fullname()/]([index.elements.column.name->sep(', ')/])[index.genStorageClause()/]; 
 [/if]
-[/template]
-
-[template private genDropIndex(index : Index) ? (index.shouldGenerateIndex() and index.isTargetPostgreSQL()) post(trim())]
-DROP INDEX IF EXISTS [index.owner.genSchemaPrefix()/][index.name/];
 [/template]
 
 [template private genDropIndex(index : Index) ? (index.shouldGenerateIndex()) post(trim())]

@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Database Editor
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.obeonetwork.dsl.database.editor;singleton:=true
+Automatic-Module-Name: org.obeonetwork.dsl.database.editor
 Bundle-Version: 2.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.obeonetwork.dsl.database.presentation.DatabaseEditorPlugin$Implementation
-Bundle-Vendor: Obeo Network
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.obeonetwork.dsl.database.presentation
@@ -14,6 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
+ org.obeonetwork.dsl.environment.edit;visibility:=reexport,
  org.obeonetwork.dsl.database.edit;visibility:=reexport,
  org.obeonetwork.dsl.typeslibrary.edit;visibility:=reexport,
  org.obeonetwork.dsl.technicalid.edit;visibility:=reexport

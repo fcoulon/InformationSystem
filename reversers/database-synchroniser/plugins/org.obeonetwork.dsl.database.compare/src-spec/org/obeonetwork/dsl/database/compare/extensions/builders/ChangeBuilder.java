@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.obeonetwork.dsl.database.DatabasePackage;
 import org.obeonetwork.dsl.database.compare.Activator;
 import org.obeonetwork.dsl.database.dbevolution.DBDiff;
+import org.obeonetwork.dsl.technicalid.TechnicalIDPackage;
 
 public abstract class ChangeBuilder {
 	
@@ -108,8 +109,8 @@ public abstract class ChangeBuilder {
 			} else if (diff.getKind() == DifferenceKind.CHANGE) {
 				if (diff instanceof AttributeChange) {
 					AttributeChange attributeChange = (AttributeChange) diff;
-					// Ignore TechID
-					if (DatabasePackage.eINSTANCE.getDatabaseElement_TechID() != attributeChange.getAttribute()) {
+					// Ignore TechnicalID
+					if (TechnicalIDPackage.eINSTANCE.getIdentifiable_Technicalid() != attributeChange.getAttribute()) {
 						createdDiffElement = handleAlterChange(attributeChange);
 					}
 				}

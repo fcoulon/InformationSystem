@@ -104,7 +104,7 @@ public class DatabaseMatchEngineFactory extends MatchEngineFactoryImpl {
 				}
 				
 				if (obj1 instanceof DatabaseElement && obj2 instanceof DatabaseElement
-						&& ((DatabaseElement)obj1).getTechID().equals(((DatabaseElement)obj2).getTechID())) {
+						&& ((DatabaseElement)obj1).getTechnicalid().equals(((DatabaseElement)obj2).getTechnicalid())) {
 					
 					if (areInTheSameContainer == null) {
 						areInTheSameContainer = areInTheSameContainer(inProgress, obj1, obj2);

@@ -31,6 +31,16 @@
       </processor>
    </extension>
    <extension
+         point="org.eclipse.emf.compare.rcp.postProcessor">
+      <processor
+            class="org.obeonetwork.dsl.database.compare.extensions.processor.DatabasePostProcessor"
+            ordinal="20">
+         <nsURI
+               value="http://www.obeonetwork.org/dsl/database/2.0">
+         </nsURI>
+      </processor>
+   </extension>
+   <extension
          point="org.eclipse.emf.compare.rcp.matchEngine">
       <engineFactory
             class="org.obeonetwork.dsl.database.compare.extensions.match.DatabaseMatchEngineFactory"

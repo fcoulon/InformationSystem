@@ -36,6 +36,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.obeonetwork.dsl.database.DatabaseElement;
 import org.obeonetwork.dsl.database.DatabasePackage;
+import org.obeonetwork.dsl.environment.provider.ObeoDSMObjectItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.obeonetwork.dsl.database.DatabaseElement} object.
@@ -44,13 +45,7 @@ import org.obeonetwork.dsl.database.DatabasePackage;
  * @generated
  */
 public class DatabaseElementItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ObeoDSMObjectItemProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,29 +63,6 @@ public class DatabaseElementItemProvider
 		super(adapterFactory);
 	}
 
-	/**
-	 * 'techID' must be unique even across copies.
-	 * We never copy its value
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	protected Command createInitializeCopyCommand(EditingDomain domain, EObject owner, Helper helper) {
-		return new InitializeCopyCommand(domain, owner, helper) {
-			@Override
-			protected Collection<? extends EAttribute> getAttributesToCopy() {
-				Collection<? extends EAttribute> allAttributes = super.getAttributesToCopy();
-				Collection<EAttribute> attributesToCopy = new ArrayList<EAttribute>();
-				for (EAttribute eAttribute : allAttributes) {
-					if (! DatabasePackage.Literals.DATABASE_ELEMENT__TECH_ID.equals(eAttribute)) {
-						attributesToCopy.add(eAttribute);
-					}
-				}
-				return attributesToCopy;
-			}
-		};
-	}
-	
 	/**
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
@@ -190,7 +162,6 @@ public class DatabaseElementItemProvider
 		switch (notification.getFeatureID(DatabaseElement.class)) {
 			case DatabasePackage.DATABASE_ELEMENT__ID:
 			case DatabasePackage.DATABASE_ELEMENT__COMMENTS:
-			case DatabasePackage.DATABASE_ELEMENT__TECH_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

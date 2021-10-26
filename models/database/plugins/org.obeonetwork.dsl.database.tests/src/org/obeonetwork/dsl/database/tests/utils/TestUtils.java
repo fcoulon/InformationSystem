@@ -36,6 +36,7 @@ import org.obeonetwork.dsl.database.reverse.DatabaseReverserPlugin;
 import org.obeonetwork.dsl.database.reverse.source.DataSource;
 import org.obeonetwork.dsl.database.reverse.source.DataSourceException;
 import org.obeonetwork.dsl.database.util.DatabaseResourceFactoryImpl;
+import org.obeonetwork.dsl.technicalid.TechnicalIDPackage;
 import org.obeonetwork.dsl.typeslibrary.TypesLibraryPackage;
 import org.obeonetwork.dsl.typeslibrary.util.TypesLibraryResourceFactoryImpl;
 
@@ -177,7 +178,8 @@ public final class TestUtils {
 		protected boolean haveEqualAttribute(EObject eObject1, EObject eObject2, EAttribute attribute) {
 			// Ignore ids
 			if (attribute == DatabasePackage.Literals.DATABASE_ELEMENT__ID
-					|| attribute == DatabasePackage.Literals.DATABASE_ELEMENT__TECH_ID) {
+					//je rajoute identifiable pour qu'il ne le prenne pas en compte.
+					|| attribute == TechnicalIDPackage.Literals.IDENTIFIABLE__TECHNICALID) {
 				return true;
 			}
 			return super.haveEqualAttribute(eObject1, eObject2, attribute);

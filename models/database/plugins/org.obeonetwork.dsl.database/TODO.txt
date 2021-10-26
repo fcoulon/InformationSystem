@@ -1,0 +1,40 @@
+Travaux à faire :
+
+1) Modifier le métamodèle Database pour réutiliser Environment
+[X] Modification plugin dsl.database pour ajouter la dépendance avec dsl.environment
+[X] Ajouter la dependance vers le DSL environment
+[X] faire hériter DatabaseElement de ObeoDSMObject
+[X] supprimer l'attribut techID (remplacé par le technicalID d'OBeoDSMObject) 
++ On garde l'ID volatile parce que nécessaire pour le scaffolding.
++ On passe sa propriété ID à false
++ On modifie DatabaseFactoryImpl pour enlever l'initialisation du techID qui ne sert plus à rien.  
+[X] modifier l'URI du dsl database (http://www.obeonetwork.org/dsl/database/1.0 => http://www.obeonetwork.org/dsl/database/2.0)
+
+[X] Regénérer les plugins DSL, Edit et Editor
+
++ Suppression de #createInitializeCopyCommand dans DatabaseElementItemProvider (remplacé par l'implémentation de IdentifiableItemProvider)
+
+[X] Modifier l’id technique existant dans database pour le remplacer par celui dans enviroment. 
+
+[X] Test de création d'une database 2.0 et de METADATA : Constat, tous les formulaires sont hors services.
+
+[ ] Modification du Design pour prendre en compte la nouvelle hiérarchie
+
+
+Prise en compte de la modification dans le code existant en particulier dans le code d’import d’un projet comme librairie.
+
+2) Code de migration automatique pour migrer un ancien modèle database dans la nouvelle version du métamodèle. A priori, seul le changement de nom de l’attribut technique serait à prendre en compte, les autres modifications étant compatibles ascendantes
+s'inspireer de EntityMigrationHelper (surcharger findEStructuralFeature)
+Changer la ResourceFactory et la Resource pour ajouter l'helperpour la migration (voir EntityResourceFactoryImpl et EntityResourceImple)
+
+Ajouter dans BasicMigrationHelper l'ancien et le nouveau URI du DSL
+
+3) Tests de migration
+Créer DatabaseMigrationTests en copiant org.obeonetwork.dsl.migration.tests.SoaMigrationTests
+
+PLUS BESOIN Regénération des vues EEF existantes
+PLUS BESOIN Reconnexion des vues EEF associées à Environment pour les afficher sur les objets Database. Ceci concerne principalement la vue Metadata qui est la raison essentielle de cette demande.
+
+4) OPTIONNEL Ajout des menus pour ajouter les diagrammes de séquence et de statemachine sur les objets Database
+si les points de vue Interaction ou SteteMachine sont activés, des menus correspondants doivent apparaitre dans le menu contextuel sur les ObeoDSM OBject
+et donc ça doit marcher directement pour les objets Database une fois qu'ils hériteront d'ObeoDSMObect
